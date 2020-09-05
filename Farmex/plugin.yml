@@ -1,0 +1,8 @@
+name: Farmex
+main: me.felnstaren.farmex.Farmex
+version: 0.1a
+author: Felnstaren
+description: Farming Expedited
+api-version: 1.16
+
+commands:
