@@ -9,8 +9,8 @@ import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.felnstaren.farmex.util.ItemEditor;
 import me.felnstaren.farmex.util.Messenger;
+import me.felnstaren.farmex.util.item.ItemEditor;
 
 public class RecipeMaker {
 	

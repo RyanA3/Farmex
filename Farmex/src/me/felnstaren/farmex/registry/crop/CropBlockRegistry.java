@@ -40,7 +40,7 @@ public class CropBlockRegistry {
 	
 	
 	public void register(ICropEntry entry) {
-		Logger.log(Level.STREAM, "Adding block to crop registry...");
+		Logger.log(Level.DEBUG, "Adding block to crop registry...");
 		for(int i = registry.length - 1; i > 0; i--)
 			if(registry[i] == null) { registry[i] = entry; return; }
 	}
@@ -65,7 +65,7 @@ public class CropBlockRegistry {
 	 * automatically queries all CropBlockLocationEntries and CropBlockLocationChunkEntries
 	 */
 	public void unregister(Block crop) {
-		Logger.log(Level.STREAM, "Unregistering custom crop block from crop registry...");
+		Logger.log(Level.DEBUG, "Unregistering custom crop block from crop registry...");
 		for(int i = 0; i < registry.length; i++) {
 			if(registry[i] == null || registry[i].getType() == CropType.VANILLA) continue;
 			if(registry[i].matches(crop)) { ((CropBlockLocationChunkEntry) registry[i]).unregister(crop); return; }
@@ -78,7 +78,7 @@ public class CropBlockRegistry {
 	 * are unloaded.
 	 */
 	public void unregister(Chunk chunk) {
-		Logger.log(Level.STREAM, "Unregistering custom crop chunk from crop registry...");
+		Logger.log(Level.DEBUG, "Unregistering custom crop chunk from crop registry...");
 		for(int i = 0; i < registry.length; i++) {
 			if(registry[i] == null || registry[i].getType() == CropType.VANILLA) continue;
 			if(((CropBlockLocationChunkEntry) registry[i]).getChunk().equals(chunk)) { registry[i] = null; return; }

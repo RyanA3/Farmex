@@ -1,9 +1,12 @@
 package me.felnstaren.farmex;
 
 import org.bukkit.Material;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.felnstaren.farmex.config.Loader;
+import me.felnstaren.farmex.config.Options;
 import me.felnstaren.farmex.event.FarmexEventMaster;
 import me.felnstaren.farmex.listener.HoeListener;
 import me.felnstaren.farmex.logger.Level;
@@ -22,6 +25,9 @@ public class Farmex extends JavaPlugin {
 	
 	public void onEnable() {
 		Logger.init(this);
+		
+		YamlConfiguration config = Loader.loadOrDefault("config.yml", "config.yml");
+		Options.load(config);
 		
 		this.recipe_maker = new RecipeMaker(this);
 		CustomMaterial.registerRecipes(recipe_maker);

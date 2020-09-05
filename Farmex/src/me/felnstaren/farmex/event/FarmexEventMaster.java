@@ -30,7 +30,7 @@ public class FarmexEventMaster {
 					method.invoke(listener, event);
 				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 					e.printStackTrace();
-					Logger.log(Level.FATAL, "A fatal error occured whilst invoking a listener method for an event \n"
+					Logger.log(Level.SEVERE, "A fatal error occured whilst invoking a listener method for an event \n"
 							+ "Listener; " + listener.getClass().getSimpleName() + "\n"
 							+ "Event; " + event.getClass().getSimpleName());
 				}

@@ -1,0 +1,15 @@
+#HHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+#           FARMEX           H
+#    Plugin by Felnstaren    H
+#HHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+
+
+# What messages do you want to see from this plugin? 
+# DEBUG -> INFO -> WARNING -> SEVERE
+# You will see all messages above the priority you select as well
+logger-priority: INFO
+
+# Whether or not to require players to have the
+# "farmex.use" permission to gain access to Farmex
+# functionality.
+use-permission: false

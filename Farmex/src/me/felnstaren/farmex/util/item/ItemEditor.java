@@ -1,4 +1,4 @@
-package me.felnstaren.farmex.util;
+package me.felnstaren.farmex.util.item;
 
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

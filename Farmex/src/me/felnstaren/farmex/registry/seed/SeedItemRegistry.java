@@ -39,7 +39,7 @@ public class SeedItemRegistry {
 	
 	
 	public void register(ISeedEntry entry) {
-		Logger.log(Level.STREAM, "Adding item to seed registry...");
+		Logger.log(Level.DEBUG, "Adding item to seed registry...");
 		for(int i = registry.length - 1; i > 0; i--)
 			if(registry[i] == null) { registry[i] = entry; return; }
 	}

@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
+import me.felnstaren.farmex.config.Options;
 import me.felnstaren.farmex.event.FarmexEventMaster;
 import me.felnstaren.farmex.event.events.CropHarvestEvent;
 import me.felnstaren.farmex.event.events.CropPlantEvent;
@@ -22,8 +23,9 @@ import me.felnstaren.farmex.registry.seed.ISeedEntry;
 import me.felnstaren.farmex.registry.seed.SeedEntry;
 import me.felnstaren.farmex.registry.seed.SeedItemRegistry;
 import me.felnstaren.farmex.registry.seed.SeedType;
-import me.felnstaren.farmex.util.InventoryEditor;
-import me.felnstaren.farmex.util.VanillaCropUtils;
+import me.felnstaren.farmex.util.block.VanillaCropUtils;
+import me.felnstaren.farmex.util.entity.Animator;
+import me.felnstaren.farmex.util.item.InventoryEditor;
 
 public class HoeListener implements Listener {
 	
@@ -47,6 +49,7 @@ public class HoeListener implements Listener {
 		ItemStack hand = player.getInventory().getItemInMainHand();
 		Block block = event.getClickedBlock();
 		
+		if(Options.USE_PERMISSION && !player.hasPermission("farmex.use")) return;
 		if(!hand.getType().name().contains("HOE")) return;
 		
 		int radius = 0;
@@ -93,6 +96,7 @@ public class HoeListener implements Listener {
 			}
 		}
 		
+		if(seeded > 0) Animator.swingArm(player);
 		InventoryEditor.removeItems(player.getInventory(), seed, seeded);
 	}
 	
@@ -114,6 +118,8 @@ public class HoeListener implements Listener {
 					crop_registry.unregister(plant);
 			}
 		}
+		
+		Animator.swingArm(player);
 	}
 	
 	

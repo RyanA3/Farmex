@@ -43,4 +43,8 @@ public class Logger {
 		console.sendMessage(prefix + divider + Messenger.color(message));
 	}
 	
+	public void setPriority(Level priority) {
+		this.priority = priority;
+	}
+	
 }

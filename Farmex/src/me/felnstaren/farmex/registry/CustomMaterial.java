@@ -8,7 +8,7 @@ import me.felnstaren.farmex.logger.Level;
 import me.felnstaren.farmex.logger.Logger;
 import me.felnstaren.farmex.registry.recipe.RecipeMaker;
 import me.felnstaren.farmex.registry.recipe.RecipeShape;
-import me.felnstaren.farmex.util.ItemEditor;
+import me.felnstaren.farmex.util.item.ItemEditor;
 import other.bananapuncher714.nbt.NBTEditor;
 
 public enum CustomMaterial {

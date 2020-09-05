@@ -1,4 +1,4 @@
-package me.felnstaren.farmex.util;
+package me.felnstaren.farmex.util.block;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
