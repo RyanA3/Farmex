@@ -1,14 +1,14 @@
 package me.felnstaren.farmex.util.entity;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftEntity;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftEntity;
+import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
 import me.felnstaren.farmex.logger.Level;
 import me.felnstaren.farmex.logger.Logger;
-import net.minecraft.server.v1_16_R1.PacketPlayOutAnimation;
+import net.minecraft.server.v1_16_R3.PacketPlayOutAnimation;
 
 public class Animator {
 

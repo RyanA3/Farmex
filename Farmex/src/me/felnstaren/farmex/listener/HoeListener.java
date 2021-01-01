@@ -26,6 +26,7 @@ import me.felnstaren.farmex.registry.seed.SeedType;
 import me.felnstaren.farmex.util.block.VanillaCropUtils;
 import me.felnstaren.farmex.util.entity.Animator;
 import me.felnstaren.farmex.util.item.InventoryEditor;
+import me.felnstaren.farmex.util.item.ItemEditor;
 
 public class HoeListener implements Listener {
 	
@@ -68,6 +69,9 @@ public class HoeListener implements Listener {
 			harvest(player, block, radius);
 			return;
 		}
+		
+		//Damage Hoe/Scythe
+		ItemEditor.damage(hand, radius + 1);
 	}
 	
 	

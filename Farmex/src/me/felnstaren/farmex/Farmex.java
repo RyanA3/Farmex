@@ -15,6 +15,7 @@ import me.felnstaren.farmex.registry.CustomMaterial;
 import me.felnstaren.farmex.registry.crop.CropBlockRegistry;
 import me.felnstaren.farmex.registry.recipe.RecipeMaker;
 import me.felnstaren.farmex.registry.seed.SeedItemRegistry;
+import me.felnstaren.farmex.util.block.VanillaCropUtils;
 
 public class Farmex extends JavaPlugin {
 
@@ -37,6 +38,7 @@ public class Farmex extends JavaPlugin {
 		seed_registry.register(Material.CARROT, Material.CARROTS);
 		seed_registry.register(Material.POTATO, Material.POTATOES);
 		seed_registry.register(Material.BEETROOT_SEEDS, Material.BEETROOTS);
+		VanillaCropUtils.seed_reg = seed_registry;
 		
 		this.crop_registry = new CropBlockRegistry();
 		crop_registry.register(Material.WHEAT);

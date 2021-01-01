@@ -6,7 +6,11 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.inventory.ItemStack;
 
+import me.felnstaren.farmex.registry.seed.SeedItemRegistry;
+
 public class VanillaCropUtils {
+	
+	public static SeedItemRegistry seed_reg;
 
 	public static boolean isMature(Block plant) {
 		Ageable crop = (Ageable) plant.getBlockData();
@@ -24,8 +28,10 @@ public class VanillaCropUtils {
 		if(crop.getAge() != crop.getMaximumAge()) return false;
 		
 		crop.setAge(0);
-		for(ItemStack drop : plant.getDrops()) 
+		for(ItemStack drop : plant.getDrops())  {
+			if(seed_reg.isSeed(drop)) drop.setAmount(Math.max(0, drop.getAmount() - 1));
 			plant.getWorld().dropItemNaturally(plant.getLocation().add(0.5, 0.5, 0.5), drop);
+		}
 		
 		plant.setBlockData(crop);
 		return true;
